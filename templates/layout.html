@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap Navbar Menu Template</title>
+
+        <!-- CSS -->        
+  
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+
+    </head>
+
+    <body>
+		
+		<!-- Top menu -->
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/">مرجع رزومه ها</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="top-navbar-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">درباره ما</a></li>
+						<li><a href="#">اضافه کردن رزومه</a></li>
+						<li><a href="#">جستجو در رزومه ها</a></li>
+                        <li><a href="/">صفحه اصلی</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+				
+        <!-- Top content -->
+        
+        {% block content %}{% endblock %}
+        <!-- Footer -->
+        <footer>
+	        <div class="container">
+	        	<div class="row">
+	        		<div class="col-sm-12 footer-copyright">
+                    	&copy; Bootstrap Navbar Template by <a href="http://azmind.com">AZMIND</a>
+                    </div>
+                </div>
+	        </div>
+        </footer>
+
+
+        <!-- Javascript -->
+        <script src="{{ url_for('static',filename='js/jquery-1.11.1.min.js')}}"></script>
+        <script src="{{ url_for('static' ,filename='js/bootstrap.min.js')}}"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/retina-1.1.0.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+        
+    </body>
+
+</html>

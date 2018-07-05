@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+{% block content %}
+<html>
+<head>
+        
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/home.css')}}">
+	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+</head>
+<body>
+	<div style ="direction:rtl;text-align:right;"class="main-section">
+		<div class="content">
+			<div class="top-section">
+				<div class="user-detail">
+                    <div class= "messenger-bulle">
+					<p >Andrew Filander</p>
+					<span>Shared publicly - Jan 20 , 2018</span>
+                </div>
+            </div>
+				<div style="clear:both;"></div>			
+			</div>
+			<div class="comment-content">
+				سلام علیکم
+			</div>
+
+			<div style ="direction:rtl;text-align:right;"class="sub-comment"></div>
+			
+			<div class="comment-box box">
+				
+				<div style="clear:both;"></div>
+				<div  class="comment-btn">
+					<input type="textarea" class="text" rows="10" cols="30" placeholder="اضافه کردن کامنت...">
+				</div>
+			</div>
+		</div>
+		<div class="add-comment">
+			<div  class="box">
+                <label for="name"><h3>نام </h3></label><br/>
+				<input class = "name" type="text"></input><br/>
+                <label><h3>کامنت</h3></label>
+				<div class="add-comment-text">
+                    
+					<textarea rows="5" class="example-textarea"></textarea>
+				</div>
+				<div style="clear:both;"></div>
+			</div>
+			<div class="add-comment-text-btn">
+				<button class="post-comment-btn">Post Comment</button>
+				<button class="cancel-btn">Cancel</button>
+			</div>
+		</div>
+    </div>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+	$(".text").click(function(){
+	    $(".text").hide();
+	}); 
+
+	$(".cancel-btn").click(function(){
+	    $(".text").show();
+	});
+
+    $('.text').click(function(){
+        $(".add-comment").slideToggle();
+    });
+
+    $('.post-comment-btn').click(function(){ 
+        var data = $('.example-textarea').val();
+        var name = $('.name').val();
+    	if(!data && !name){
+    		alert("Plese Enter value after click button post comment..");
+    	}else{
+    		$('.example-textarea').val('');
+    		$(".sub-comment").append('<div "class="example"><div class="comment-img">'+name+'</div><div class="comment"><p class= "messenger-bulle">'+ data +'</p></div><div style="clear:both;"></div></div>');
+    	}
+    });
+
+	$(".cancel-btn").click(function(){
+	    $(".add-comment").hide();
+	});
+
+</script>
+</body>
+</html>
+{% endblock %}
